@@ -66,6 +66,8 @@ app.get('/config', async (req, res) => {
     lookup_keys: ['sample_basic', 'sample_premium'],
     expand: ['data.product']
   });
+  
+  prices.data.length < 1 ? console.log('\nNo prices found!') : null;
 
   res.send({
     publishableKey: process.env.STRIPE_PUBLISHABLE_KEY,
